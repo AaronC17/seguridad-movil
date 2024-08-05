@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra de criptomonedas usando Binance Smart Chain">
+    <title>Compra de Criptomonedas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.6.6/dist/umd/index.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://buy.rickcrypto.com/assets/RK%20Coin-cDYnxJta.png" alt="AarónSwap Logo" >
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://dexscreener.com/bsc/0xa2bd7c1b03a5de5f96e6152d62ed94d8c14d96f9">Mercado</a></li>
+                    <li><a href="staking.html">Staking</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="wallet-connect">
+                <button id="connectButton">Conectar Wallet</button>
+                <select id="walletSelect">
+                    <option value="metamask">MetaMask</option>
+                    <option value="walletconnect">WalletConnect</option>
+                    <option value="trustwallet">Trust Wallet</option>
+                </select>
+            </div>
+            
+            
+      
+
+            
+            <div class="animation-3d2">
+                <div class="animation-3d2-inner">
+                    <div class="face face-front"><img class="pepe" src="https://rickcrypto.com/files/7910af08-3060-4cdd-883d-fe2cad3557ec.svg" alt="" height="100px"></div>
+                    <div class="face face-back"><img class="pepe" src="https://rickcrypto.com/files/7910af08-3060-4cdd-883d-fe2cad3557ec.svg" alt="" height="100px"></div>
+                    <div class="face face-left"><img img class="pepe2" src="https://rickcrypto.com/files/dda6896a-582d-4395-a68f-6b54d801035e.svg" alt="" height="100px"></div>
+                    <div class="face face-right"><img img class="pepe2" src="https://rickcrypto.com/files/dda6896a-582d-4395-a68f-6b54d801035e.svg" alt="" height="100px"></div>
+                    <div class="face face-top"><img class="pepe3" src="https://rickcrypto.com/files/ba9ec9d9-0e90-4e8c-bab3-89c22a1d8e66.svg" alt="" height="100px"></div>
+                    <div class="face face-bottom"><img class="pepe3" src="https://rickcrypto.com/files/ba9ec9d9-0e90-4e8c-bab3-89c22a1d8e66.svg" alt="" height="100px"></div>
+                </div>
+            </div>
+
+            <div class="animation-3d3">
+                <div class="animation-3d3-inner">
+                    <div class="face face-front"><img class="pepe2" src="https://rickcrypto.com/files/dda6896a-582d-4395-a68f-6b54d801035e.svg" alt="" height="100px"></div>
+                    <div class="face face-back"><img img class="pepe2" src="https://rickcrypto.com/files/dda6896a-582d-4395-a68f-6b54d801035e.svg" alt="" height="100px"></div>
+                    <div class="face face-left"><img class="pepe3" src="https://rickcrypto.com/files/ba9ec9d9-0e90-4e8c-bab3-89c22a1d8e66.svg" alt="" height="100px"></div>
+                    <div class="face face-right"><img class="pepe3" src="https://rickcrypto.com/files/ba9ec9d9-0e90-4e8c-bab3-89c22a1d8e66.svg" alt="" height="100px"></div>
+                    <div class="face face-top"><img class="pepe" src="https://rickcrypto.com/files/7910af08-3060-4cdd-883d-fe2cad3557ec.svg" alt="" height="100px"></div>
+                    <div class="face face-bottom"><img class="pepe" src="https://rickcrypto.com/files/7910af08-3060-4cdd-883d-fe2cad3557ec.svg" alt="" height="100px"></div>
+                </div>
+            </div>
+            
+
+
+        
+
+        </header>
+        <main>
+            <section class="welcome">
+                <h1>Bienvenido a RickCoin Dao</h1>
+                <p>Conecta tu wallet e ingresa la cantidad que deseas comprar de RickCoin</p>
+            </section>
+            <section class="wallet">
+                <input type="number" id="bnbAmount" placeholder="Cantidad de BNB" step="0.01" min="0">
+                <button id="buyButton" disabled>Comprar RickCoin</button>
+                <div id="status" class="status-message">Conecta tu wallet para comenzar</div>
+            </section>
+            <section class="transactions">
+                <h2 style="color: rgb(3, 3, 3);">Historial de Transacciones</h2>
+                <ul id="transactionList"></ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 RickDao. Todos los derechos reservados</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+
+</body>
+</html>

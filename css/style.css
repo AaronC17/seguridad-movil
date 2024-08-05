@@ -1,0 +1,401 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #2b2530, rgb(89, 31, 165), #31094b);
+    color: #eeeeee;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #131129;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #6739e4;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 150px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative;
+    bottom: 5px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fafaf8;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.wallet-connect {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wallet-connect button {
+    background: #6739e4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 175px; /* Tamaño fijo para el botón */
+    height: 40px;
+}
+
+.wallet-connect button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-connect button.connected {
+    background: #4caf50;
+    animation: pulse 1.22s infinite;
+}  
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px rgba(76, 175, 80, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5);
+    }
+}
+
+.wallet-connect select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+    width: 175px; /* Tamaño fijo para el botón */
+    height: 40px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wallet {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.wallet input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.wallet button {
+    background: #9b5bcb;
+    border: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallet button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wallet button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #6e3a9a, #9b5bcb);
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 1px solid #5e2a78;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: scale(1);
+} 
+
+#status.show {
+    opacity: 1;
+    transform: scale(1);
+    animation: gradientShift 5s infinite;
+}
+
+#status strong {   
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #ffd700;
+}
+
+.alert {
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.alert.show {
+    display: block;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.transactions {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transactions h2 {
+    margin-top: 0;
+}
+
+.transactions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transactions ul li {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.recent-purchases {
+    background: #d31111;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.transaction-item {
+    color: black;
+}
+
+.recent-purchases h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #131129;
+}
+
+.recent-purchases ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-purchases ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-purchases ul li:last-child {
+    border-bottom: none;
+}
+
+.recent-purchases .wallet {
+    font-weight: bold;
+    color: #6739e4;
+}
+
+.recent-purchases .amount {
+    color: #4caf50;
+}
+
+footer {
+    background: #131129;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #6739e4;
+}
+
+
+
+
+.animation-3d2 {
+    position: fixed;
+    top: 325px;
+    left: 1550px;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px; /* Perspectiva para mejorar el efecto 3D */
+}
+
+.animation-3d3 {
+    position: fixed;
+    top: 325px;
+    left: 220PX;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px; /* Perspectiva para mejorar el efecto 3D */
+}
+
+
+
+
+
+
+
+.animation-3d2-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: cubeRotation2 25s linear infinite; /* Rotación global infinita */
+}
+
+.animation-3d3-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: cubeRotation3 25s linear infinite; /* Rotación global infinita */
+}
+
+
+
+.face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(150deg, rgba(119, 44, 189, 0.8), rgba(92, 59, 133, 0.8), rgba(71, 69, 69, 0.8), rgba(61, 18, 88, 0.8),  rgba(112, 97, 128, 0.8), rgba(106, 41, 150, 0.8), rgba(13, 10, 61, 0.8),  rgba(159, 33, 190, 0.8),  rgba(96, 41, 168, 0.8));
+    background-size: 700% 700%; /* Aumenta el tamaño del gradiente */
+    border: 1px solid #000000;
+    text-align: center;
+    font-size: 3em;
+    line-height: 150px;
+    color: #4d0b6b; /* Texto blanco para destacar sobre el fondo */
+    border-radius: 5px;
+    box-shadow: 0.0 0.1 100px rgba(0, 0, 0, 0.5); /* Aumenta la sombra para resaltar más */
+    animation: gradientShift 10s linear infinite; /* Animación de gradiente en movimiento */
+}
+
+.face-front  { transform: translateZ(75px); }
+.face-back   { transform: rotateY(180deg) translateZ(75px); }
+.face-left   { transform: rotateY(-90deg) translateZ(75px); }
+.face-right  { transform: rotateY(90deg) translateZ(75px); }
+.face-top    { transform: rotateX(90deg) translateZ(75px); }
+.face-bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+
+
+@keyframes cubeRotation2 {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes cubeRotation3 {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(-360deg) rotateY(360deg); }
+}
+
+
+
+.pepe {
+position: fixed;
+right: 40px;
+top: 20px;
+}
+
+.pepe2 {
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    }
+
+    .pepe3 {
+        position: fixed;
+        right: 25px;
+        top: 22px;
+        }
